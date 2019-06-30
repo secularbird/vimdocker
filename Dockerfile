@@ -22,12 +22,13 @@ RUN apt update && apt dist-upgrade -y && apt install -y vim \
     python3-pip \
     nodejs \
     cscope \
+    software-properties-common \
     && rm -Rf /var/lib/apt/lists/*
 
 
 # install golang
 RUN add-apt-repository ppa:gophers/archive
-RUN apt-get update && apt-get install golang-1.12-go
+RUN apt-get update && apt-get install golang -y
 
 ENV HOME /home/spacevim
 
